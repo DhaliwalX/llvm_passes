@@ -9,7 +9,7 @@ message(STATUS "Using LLVMConfig.cmake in: ${LLVM_ROOT}/lib/cmake/llvm")
 message(STATUS "Looking for LLVM cmake modules: ${LLVM_ROOT}/lib/cmake/llvm")
 
 add_library(dead_code_elimination MODULE
-            DeadCodeElimination.cc
+            DeadInstructionElimination.cc
 )
 
 include_directories(${LLVM_INCLUDE_DIRS})
