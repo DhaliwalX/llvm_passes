@@ -16,7 +16,15 @@ struct HelloWorldPass : FunctionPass {
 
     bool runOnFunction(Function &function) override {
         errs() << "Hello: " << function.getName() << "\n";
+        return false;
     }
 };
 
+char HelloWorldPass::ID = 0;
+
 }
+
+RegisterPass<HelloWorldPass> X("hello",
+                                "Simple hello world pass",
+                                false,
+                                false);
